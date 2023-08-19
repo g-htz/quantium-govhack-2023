@@ -13021,8 +13021,18 @@ Copyright (c) 2015 Daniel Eden
     color: #1d253b; }
     .white-content .nav-pills .nav-item .nav-link:not(.active):hover {
       background: #cccccc; }
+.card-rb {
+    background: #27293d;
+    border: 0;
+    position: relative;
+    width: 28.5%;
+    margin-bottom: 20px;
+    bottom: 0;
+    box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.1); 
+}
 
 .card {
+  
   background: #27293d;
   border: 0;
   position: relative;
