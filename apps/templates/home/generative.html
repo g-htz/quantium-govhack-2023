@@ -6,7 +6,11 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+</head>
+<body>
   <div class="content">
     <div class="row">
       <div class="col-md-12">
@@ -16,7 +20,7 @@
           </div>
 
           <div class="card-body">
-            <form onsubmit="myFunction()">
+            <form id="genform">
 
               <div class="row">
 
@@ -54,7 +58,7 @@
                     <label>Age group</label>
                     <!-- <input type="text" class="form-control" placeholder="City" value="Sydney"> -->
                     <div >
-                      <select class="w-100 form-control" name="age" id="genform">
+                      <select class="w-100 form-control" name="age" id="">
                         <option value="a">a</option>
                         <option value="b">b</option>
                         <option value="c">c</option>
@@ -68,7 +72,7 @@
                     <label>Gender</label>
                     <!-- <input type="text" class="form-control" placeholder="Country" value="Australia"> -->
                     <div >
-                      <select class="w-100 form-control" name="gender" id="genform">
+                      <select class="w-100 form-control" name="gender" id="">
                         <option value="a">a</option>
                         <option value="b">b</option>
                         <option value="c">c</option>
@@ -82,7 +86,7 @@
                     <label>Weekly exercise frequency</label>
                     <!-- <input type="number" class="form-control" placeholder="ZIP Code"> -->
                     <div >
-                      <select class="w-100 form-control" name="exercise" id="genform">
+                      <select class="w-100 form-control" name="exercise" id="">
                         <option value="a">a</option>
                         <option value="b">b</option>
                         <option value="c">c</option>
@@ -98,7 +102,7 @@
                     <label>Smoker</label>
                     <!-- <input type="text" class="form-control" placeholder="City" value="Sydney"> -->
                     <div >
-                      <select class="w-100 form-control" name="genform" id="genform">
+                      <select class="w-100 form-control" name="" id="">
                         <option value="a">a</option>
                         <option value="b">b</option>
                         <option value="c">c</option>
@@ -112,7 +116,7 @@
                     <label>Country</label>
                     <!-- <input type="text" class="form-control" placeholder="Country" value="Australia"> -->
                     <div >
-                      <select class="w-100 form-control" name="genform" id="genform">
+                      <select class="w-100 form-control" name="" id="">
                         <option value="a">a</option>
                         <option value="b">b</option>
                         <option value="c">c</option>
@@ -126,7 +130,7 @@
                     <label>Postal Code</label>
                     <!-- <input type="number" class="form-control" placeholder="ZIP Code"> -->
                     <div >
-                      <select class="w-100 form-control" name="genform" id="genform">
+                      <select class="w-100 form-control" name="" id="">
                         <option value="a">a</option>
                         <option value="b">b</option>
                         <option value="c">c</option>
@@ -138,9 +142,11 @@
               </div>
               <div class="row">
               </div>
+
+              <div id="response"></div>
               
               <div class="card-footer">
-                <button type="submit" class="btn btn-fill btn-primary">Submit</button>
+                <button type='submit' name='submit' id='submit' class="btn btn-fill btn-primary">Submit</button>
               </div>
             </form>
           </div>
@@ -153,13 +159,6 @@
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 
-  <script>
-      function myFunction() {
-        var age = document.getElementsByName('age')[0];
-        var gender = document.getElementsByName('gender')[0];
-        var exercise = document.getElementsByName('exercise')[0];
-        var text = (age.options[age.selectedIndex].text) + (gender.options[gender.selectedIndex].text) + (exercise.options[exercise.selectedIndex].text);
-        alert("The form was submitted " + text);
-    }
-  </script>
+  <script type="text/javascript" src="../../static/assets/js/generative.js"></script>
+</body>
 {% endblock javascripts %}
