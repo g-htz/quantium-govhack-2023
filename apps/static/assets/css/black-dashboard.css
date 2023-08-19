@@ -344,7 +344,7 @@ h6, .h6 {
   font-size: 0.75rem; }
 
 .navbar-logo {
-  max-width: 20%;
+  max-width: 10%;
   padding-left: 4%;
 }
 
@@ -10551,9 +10551,6 @@ img {
     color: #344675; }
   .navbar button.navbar-toggler[data-target="#navigation"] {
     padding-top: 0; }
-  .navbar-logo {
-    max-width: 30%;
-  }
   .navbar .navbar-toggler-bar {
     display: block;
     position: relative;
