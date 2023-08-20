@@ -30,7 +30,7 @@ def query_view():
 		print(response)
 
 		return jsonify({'response': response})
-	return render_template('index.html')
+	return render_template('generative.html')
 
 
 if __name__ == "__main__":
