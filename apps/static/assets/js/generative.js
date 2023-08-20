@@ -53,3 +53,37 @@ async function askChatGPT(question) {
 
     return response;
 }
+
+// Function to load and run the Python code
+// function runPythonCode() {
+//     // Load Pyodide and the Python script
+//     const PYODIDE_BASE_URL = "https://cdn.jsdelivr.net/pyodide/v0.18.0/full"
+
+//     loadPyodide({ indexURL: PYODIDE_BASE_URL }).then((pyodide) => {
+//       // Define the Python script
+//       const pythonCode = `
+//         # Your Python code here
+//         print("Hello from Python!")
+//         result = 42 + 23
+//       `;
+//       alert(pythonCode);
+//       // Run the Python code
+//       pyodide.runPython(pythonCode);
+      
+//       // Access the Python variable 'result' from JavaScript
+//       const result = pyodide.globals.get('result');
+//       console.log('Result from Python:', result);
+//     });
+//   }
+  
+
+// const PYODIDE_BASE_URL = "https://cdn.jsdelivr.net/pyodide/v0.18.0/full"
+
+// window.loadPyodide({ indexURL: PYODIDE_BASE_URL }).then((pyodide) => {
+//   globalThis.pyodide = pyodide      // you might also want to store pyodide globally so 
+//                                     // so you can access anywhere in the scope
+//   pyodide.loadPackage(['numpy']).then(() => {
+//     pyodide.runPython(`   
+//     # My python code here
+//   `);
+// });});

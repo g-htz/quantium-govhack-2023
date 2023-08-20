@@ -8,6 +8,7 @@
 {% block content %}
 <head>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="https://pyodide-cdn2.iodide.io/v0.17.0/full/pyodide.js"></script>
 
 </head>
 <body>
@@ -20,7 +21,7 @@
           </div>
 
           <div class="card-body">
-            <form id="genform">
+            <form onclick="runPythonCode()" id="genform">
 
               <div class="row">
 
@@ -38,7 +39,7 @@
                 <div class="col-md-4 pl-md-1">
                   <div class="form-group">
                     <label>Last Name</label>
-                    <input type="text" class="form-control" placeholder="Last Name" value="Hetrelezis">
+                    <input type="text" class="form-control" placeholder="Last Name" value="S">
                   </div>
                 </div>
                 <div class="col-md-4 pl-md-1 form-group">
@@ -53,88 +54,64 @@
               <div class="row">
               </div>
               <div class="row">
-                <div class="col-md-4 pr-md-1">
+                <div class="col-md-6 pr-md-1">
                   <div class="form-group">
-                    <label>Age group</label>
-                    <!-- <input type="text" class="form-control" placeholder="City" value="Sydney"> -->
-                    <div >
-                      <select class="w-100 form-control" name="age" id="">
-                        <option value="a">a</option>
-                        <option value="b">b</option>
-                        <option value="c">c</option>
-                        <option value="d">d</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-md-1">
-                  <div class="form-group">
-                    <label>Gender</label>
+                    <label>Would you consider your household to be in a low income area? <br></label>
                     <!-- <input type="text" class="form-control" placeholder="Country" value="Australia"> -->
                     <div >
                       <select class="w-100 form-control" name="gender" id="">
-                        <option value="a">a</option>
-                        <option value="b">b</option>
-                        <option value="c">c</option>
-                        <option value="d">d</option>
+                        <option value="1">Strongly disagree</option>
+                        <option value="2">Disagree</option>
+                        <option value="3">Neutral</option>
+                        <option value="4">Agree</option>
+                        <option value="5">Strongly agree</option>
                       </select>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 pl-md-1">
+                <div class="col-md-6 pl-md-1">
                   <div class="form-group">
-                    <label>Weekly exercise frequency</label>
+                    <label>Do you live in an area considered as "Rural Australia"?</label>
                     <!-- <input type="number" class="form-control" placeholder="ZIP Code"> -->
                     <div >
                       <select class="w-100 form-control" name="exercise" id="">
-                        <option value="a">a</option>
-                        <option value="b">b</option>
-                        <option value="c">c</option>
-                        <option value="d">d</option>
+                        <option value="1">Strongly disagree</option>
+                        <option value="2">Disagree</option>
+                        <option value="3">Neutral</option>
+                        <option value="4">Agree</option>
+                        <option value="5">Strongly agree</option>
                       </select>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row pt-4">
-                <div class="col-md-4 pr-md-1">
+                <div class="col-md-6 pr-md-1">
                   <div class="form-group">
-                    <label>Smoker</label>
+                    <label>Would you agree that your area was a Hard Hit Area (HHA) by COVID-19?</label>
                     <!-- <input type="text" class="form-control" placeholder="City" value="Sydney"> -->
                     <div >
                       <select class="w-100 form-control" name="" id="">
-                        <option value="a">a</option>
-                        <option value="b">b</option>
-                        <option value="c">c</option>
-                        <option value="d">d</option>
+                        <option value="1">Strongly disagree</option>
+                        <option value="2">Disagree</option>
+                        <option value="3">Neutral</option>
+                        <option value="4">Agree</option>
+                        <option value="5">Strongly agree</option>
                       </select>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 px-md-1">
+                <div class="col-md-6 px-md-1">
                   <div class="form-group">
-                    <label>Country</label>
+                    <label>Would you agree that there is a strong Indigenous population in your local area?</label>
                     <!-- <input type="text" class="form-control" placeholder="Country" value="Australia"> -->
                     <div >
                       <select class="w-100 form-control" name="" id="">
-                        <option value="a">a</option>
-                        <option value="b">b</option>
-                        <option value="c">c</option>
-                        <option value="d">d</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 pl-md-1">
-                  <div class="form-group">
-                    <label>Postal Code</label>
-                    <!-- <input type="number" class="form-control" placeholder="ZIP Code"> -->
-                    <div >
-                      <select class="w-100 form-control" name="" id="">
-                        <option value="a">a</option>
-                        <option value="b">b</option>
-                        <option value="c">c</option>
-                        <option value="d">d</option>
+                        <option value="1">Strongly disagree</option>
+                        <option value="2">Disagree</option>
+                        <option value="3">Neutral</option>
+                        <option value="4">Agree</option>
+                        <option value="5">Strongly agree</option>
                       </select>
                     </div>
                   </div>
@@ -143,8 +120,6 @@
               <div class="row">
               </div>
 
-              <div id="response"></div>
-              
               <div class="card-footer">
                 <button type='submit' name='submit' id='submit' class="btn btn-fill btn-primary">Submit</button>
               </div>
